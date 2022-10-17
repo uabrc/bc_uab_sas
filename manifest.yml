@@ -7,5 +7,5 @@ description: |
   This app will launch a [SAS] GUI on the [Cheaha cluster]. You will be able
   to interact with the SAS GUI through a VNC session.
 
-  [SAS]: https://www.sas.com/en_us/home.html 
+  [SAS]: https://www.sas.com/en_us/home.html
   [Cheaha cluster]: https://docs.uabgrid.uab.edu/wiki/Cheaha_GettingStarted
