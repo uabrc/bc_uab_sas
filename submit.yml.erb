@@ -1,5 +1,11 @@
 # Job submission configuration file
 #
+<%-
+  email = ENV['USER']
+  if !email.include? '@'
+    email = email + '@uab.edu'
+  end
+-%>
 ---
 # This config comes from below URL
 # https://github.com/OSC/bc_example_jupyter/blob/custom_environment/submit.yml.erb
@@ -21,4 +27,8 @@ script:
     - "--job-name=ood-sas-<%= version.split("/")[-1] %>"
 <%- if bc_partition.include? "pascalnodes" -%>
     - "--gres=gpu:1"
+<%- end -%>
+<%- if bc_email_on_started == "1" -%>
+    - "--mail-type=BEGIN"
+    - "--mail-user=<%= email %>"
 <%- end -%>
